@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تغییر حالت تاریک و روشن</title>
+    <style>
+        body {
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        .content{
+           margin-left: 700px;
+        }
+        .btn{
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2 class="text"> DARKMODE</h2>
+        <button class="btn" id="toggleButton">تغییر به حالت تاریک</button>    
+        
+    </div>
+
+    <script>
+        const button = document.getElementById('toggleButton');
+        let isDarkMode = false;
+
+        button.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            button.textContent = isDarkMode ? 'تغییر به حالت روشن' : 'تغییر به حالت تاریک';
+        });
+    </script>
+</body>
+</html>
